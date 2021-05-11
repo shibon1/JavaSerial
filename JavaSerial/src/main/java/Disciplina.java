@@ -54,7 +54,7 @@ public class Disciplina implements Serializable {
     @Override
     public String toString() {
      
-  return "================================= \n ID da Disciplina=" + iddisciplina + " || Disciplina=" + nomedisciplina + "\n";
+  return "================================= \n ID da Disciplina=" + iddisciplina + " || Disciplina=" + nomedisciplina + " || Horas= " + horasdisciplina+ "\n";
     }
    
 }

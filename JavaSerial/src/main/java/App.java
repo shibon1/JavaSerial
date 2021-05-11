@@ -187,36 +187,35 @@ public class App extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(guardarcursoBt))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel14)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(selcurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(limparcursoBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(modificarcurso))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(eliminarcurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(restaurarcursoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(horascurso))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(nomecurso)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(guardarcursoBt))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(selcurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(limparcursoBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modificarcurso))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(eliminarcurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(restaurarcursoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(horascurso))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(nomecurso))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(jLabel7)
@@ -403,9 +402,9 @@ public class App extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(seldisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -693,7 +692,7 @@ public class App extends javax.swing.JFrame {
     private void eliminaralunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminaralunoActionPerformed
         // TODO add your handling code here:
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Person.txt");
             if (formandos.size() == 0) {
                 res2.append("Não existem formandos." + "\n");
             } else {
@@ -721,7 +720,7 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
         FileInputStream fileInputStream = null;
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Person.txt");
             if (formandos.size() == 0) {
                 res2.append("Não existe alunos." + "\n");
             } else {
@@ -758,7 +757,7 @@ public class App extends javax.swing.JFrame {
         FileInputStream fileInputStream = null;
         try {
             // TODO add your handling code here:
-            fileInputStream = new FileInputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            fileInputStream = new FileInputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Person.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             formandos = (ArrayList<Person>) objectInputStream.readObject();
             objectInputStream.close();
@@ -812,7 +811,7 @@ public class App extends javax.swing.JFrame {
             person.setId(idperson++);
             idaluno.setText(String.valueOf(idperson));
             formandos.add(person);
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Person.txt");
             try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
                 objectOutputStream.writeObject(formandos);
                 objectOutputStream.flush();
@@ -836,7 +835,7 @@ public class App extends javax.swing.JFrame {
     private void eliminardisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminardisciplinaActionPerformed
         // TODO add your handling code here:
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Disciplinaarray.txt");
             if (arraydisciplina.size() == 0) {
                 res1.append("Não existem Disciplinas." + "\n");
             } else {
@@ -864,7 +863,7 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
         FileInputStream fileInputStream = null;
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Disciplinaarray.txt");
             if (arraydisciplina.size() == 0) {
                 res1.append("Não existem Disciplina." + "\n");
             } else {
@@ -875,6 +874,7 @@ public class App extends javax.swing.JFrame {
 
                     arraydisciplina.get(iddisciplina - 1);
                     Disciplina disciplina = new Disciplina();
+                    disciplina.setIddisciplina(iddisciplina);
                     disciplina.setHorasdisciplina(Integer.parseInt(horasdisciplina.getText()));
                     disciplina.setNomedisciplina(nomedisciplina.getText());
                     arraydisciplina.set(iddisciplina - 1, disciplina);
@@ -915,7 +915,7 @@ public class App extends javax.swing.JFrame {
             disciplina.setIddisciplina(idarraydisciplina++);
             iddisciplina.setText(String.valueOf(idarraydisciplina));
             arraydisciplina.add(disciplina);
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Disciplinaarray.txt");
 
             try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
                 objectOutputStream.writeObject(arraydisciplina);
@@ -935,7 +935,7 @@ public class App extends javax.swing.JFrame {
         FileInputStream fileInputStream = null;
         try {
             // TODO add your handling code here:
-            fileInputStream = new FileInputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            fileInputStream = new FileInputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Disciplinaarray.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             arraydisciplina = (ArrayList<Disciplina>) objectInputStream.readObject();
             objectInputStream.close();
@@ -961,7 +961,7 @@ public class App extends javax.swing.JFrame {
     private void eliminarcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarcursoActionPerformed
         // TODO add your handling code here:
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Cursoarray.txt");
             if (arraycurso.size() == 0) {
                 res1.append("Não existem Cursos." + "\n");
             } else {
@@ -988,7 +988,7 @@ public class App extends javax.swing.JFrame {
     private void modificarcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarcursoActionPerformed
         FileInputStream fileInputStream = null;
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Cursoarray.txt");
             if (arraycurso.size() == 0) {
                 res.append("Não existem Cursos criados." + "\n");
             } else {
@@ -996,12 +996,12 @@ public class App extends javax.swing.JFrame {
                 if (idCurso <= 0 || idCurso > arraycurso.size()) {
                     res.append("Nenhum Curso selecionado" + "\n");
                 } else {
-
-                    arraycurso.get(idCurso);
+                    arraycurso.get(idCurso - 1);
                     Curso curso = new Curso();
+                    curso.setIdcurso(idCurso);
                     curso.setHoras(Integer.parseInt(horascurso.getText()));
                     curso.setNomecurso(nomecurso.getText());
-                    arraycurso.set(idCurso, curso);
+                    arraycurso.set(idCurso - 1, curso);
                     res.append("O curso com o ID:" + idCurso + " foi alterado ");
 
                 }
@@ -1029,7 +1029,7 @@ public class App extends javax.swing.JFrame {
         FileInputStream fileInputStream = null;
         try {
             // TODO add your handling code here:
-            fileInputStream = new FileInputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            fileInputStream = new FileInputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Cursoarray.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             arraycurso = (ArrayList<Curso>) objectInputStream.readObject();
             objectInputStream.close();
@@ -1064,7 +1064,7 @@ public class App extends javax.swing.JFrame {
             curso.setIdcurso(idarraycurso++);
             idcurso.setText(String.valueOf(idarraycurso));
             arraycurso.add(curso);
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\GRSI.LABINF1-PC07\\Desktop\\Proj\\Cursoarray.txt");
 
             try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
                 objectOutputStream.writeObject(arraycurso);

@@ -15,12 +15,12 @@ public class Curso implements Serializable {
     private static final long serialVersionUID = 1L;
     private int idcurso;
     private String nomecurso;
-    private int horasdisciplina;
+    private int horascurso;
 
     public Curso(int idcurso, String nomecurso, int horas) {
         this.idcurso = idcurso;
         this.nomecurso = nomecurso;
-        this.horasdisciplina = horas;
+        this.horascurso = horas;
     }
 
     Curso() {
@@ -44,17 +44,17 @@ public class Curso implements Serializable {
     }
 
     public int getHoras() {
-        return horasdisciplina;
+        return horascurso;
     }
 
     public void setHoras(int horas) {
-        this.horasdisciplina = horas;
+        this.horascurso = horas;
     }
 
     @Override
     public String toString() {
 
-        return "================================= \n ID do Curso=" + idcurso + " || Curso=" + nomecurso + "\n";
+        return "================================= \n ID do Curso=" + idcurso + " || Curso=" + nomecurso + " || Horas=" + horascurso + "\n";
     }
 
 }
