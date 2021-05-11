@@ -50,7 +50,7 @@ public class App extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         horascurso = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        cursos = new javax.swing.JTextField();
+        nomecurso = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         idcurso = new javax.swing.JTextField();
         guardarcursoBt = new javax.swing.JButton();
@@ -58,11 +58,15 @@ public class App extends javax.swing.JFrame {
         limparcursoBt = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         res = new javax.swing.JTextArea();
+        modificarcurso = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        eliminarcurso = new javax.swing.JButton();
+        selcurso = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         iddisciplina = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        disciplinas = new javax.swing.JTextField();
+        nomedisciplina = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         horasdisciplina = new javax.swing.JTextField();
         restaurarDisciplinaBt = new javax.swing.JButton();
@@ -73,6 +77,10 @@ public class App extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         Disciplinas = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        modificardisciplina = new javax.swing.JButton();
+        eliminardisciplina = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        seldisciplina = new javax.swing.JSpinner();
         jScrollPane3 = new javax.swing.JScrollPane();
         res1 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -89,8 +97,17 @@ public class App extends javax.swing.JFrame {
         restaurarBt = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         idaluno = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        modificaraluno = new javax.swing.JButton();
+        eliminaraluno = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        selaluno = new javax.swing.JSpinner();
+        jScrollPane4 = new javax.swing.JScrollPane();
         res2 = new javax.swing.JTextArea();
+        comboaluno = new javax.swing.JComboBox<>();
+        combocurso = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -142,6 +159,25 @@ public class App extends javax.swing.JFrame {
         res.setRows(5);
         jScrollPane1.setViewportView(res);
 
+        modificarcurso.setText("Modificar");
+        modificarcurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarcursoActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Selecionar ID do Curso:");
+
+        eliminarcurso.setText("Eliminar");
+        eliminarcurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarcursoActionPerformed(evt);
+            }
+        });
+
+        selcurso.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        selcurso.setMaximumSize(new java.awt.Dimension(20, 20));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -149,33 +185,43 @@ public class App extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cursos, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(idcurso, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(horascurso, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addComponent(guardarcursoBt)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(limparcursoBt)
-                                .addGap(18, 18, 18)
-                                .addComponent(restaurarcursoBt)))
-                        .addGap(0, 70, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(21, 21, 21)
+                                    .addComponent(guardarcursoBt))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(jLabel14)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(selcurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(limparcursoBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(modificarcurso))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(eliminarcurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(restaurarcursoBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(horascurso))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(nomecurso)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(idcurso)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -188,19 +234,31 @@ public class App extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nomecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(horascurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(guardarcursoBt)
-                    .addComponent(limparcursoBt)
-                    .addComponent(restaurarcursoBt))
-                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(guardarcursoBt)
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(selcurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(limparcursoBt)
+                            .addComponent(restaurarcursoBt))
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modificarcurso)
+                            .addComponent(eliminarcurso))
+                        .addGap(2, 2, 2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         jTabbedPane1.addTab("Curso", jPanel1);
@@ -250,6 +308,24 @@ public class App extends javax.swing.JFrame {
 
         jButton1.setText("Associar disciplina a curso");
 
+        modificardisciplina.setText("Modificar");
+        modificardisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificardisciplinaActionPerformed(evt);
+            }
+        });
+
+        eliminardisciplina.setText("Eliminar");
+        eliminardisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminardisciplinaActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Selecionar ID da Disciplina:");
+
+        seldisciplina.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
         res1.setColumns(20);
         res1.setRows(5);
         jScrollPane3.setViewportView(res1);
@@ -261,44 +337,44 @@ public class App extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11))
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(disciplinas, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(iddisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(horasdisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(guardardisciplinaBt))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Disciplinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel13))
-                                        .addGap(43, 43, 43)
-                                        .addComponent(jButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(58, 58, 58)
-                                        .addComponent(limparDisciplinaBt1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(restaurarDisciplinaBt)
-                                        .addGap(50, 50, 50)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel11))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nomedisciplina)
+                            .addComponent(horasdisciplina)
+                            .addComponent(iddisciplina, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(guardardisciplinaBt)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addComponent(seldisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Disciplinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel12)
+                            .addComponent(Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(modificardisciplina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(22, 22, 22))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(limparDisciplinaBt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(34, 34, 34)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(eliminardisciplina, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(restaurarDisciplinaBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,7 +385,7 @@ public class App extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(disciplinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomedisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -320,7 +396,13 @@ public class App extends javax.swing.JFrame {
                     .addComponent(guardardisciplinaBt)
                     .addComponent(limparDisciplinaBt1)
                     .addComponent(restaurarDisciplinaBt))
-                .addGap(31, 31, 31)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modificardisciplina)
+                    .addComponent(eliminardisciplina)
+                    .addComponent(jLabel15)
+                    .addComponent(seldisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
@@ -329,9 +411,9 @@ public class App extends javax.swing.JFrame {
                     .addComponent(Cursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Disciplinas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         jTabbedPane1.addTab("Disciplinas", jPanel2);
@@ -374,50 +456,102 @@ public class App extends javax.swing.JFrame {
         idaluno.setEditable(false);
         idaluno.setText("1");
 
+        modificaraluno.setText("Modificar");
+        modificaraluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificaralunoActionPerformed(evt);
+            }
+        });
+
+        eliminaraluno.setText("Eliminar");
+        eliminaraluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminaralunoActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Selecionar ID do Aluno:");
+
+        selaluno.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
         res2.setColumns(20);
         res2.setRows(5);
-        jScrollPane2.setViewportView(res2);
+        jScrollPane4.setViewportView(res2);
+
+        comboaluno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        combocurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel17.setText("Aluno:");
+
+        jLabel18.setText("Curso");
+
+        jButton2.setText("Associar aluno a curso");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(26, 26, 26)
-                        .addComponent(pais))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idaluno))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nome)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(26, 26, 26)
+                                .addComponent(pais))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idaluno))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4))
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nome)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(altura, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(selaluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17)
+                                            .addComponent(comboaluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(67, 67, 67)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel18)
+                                            .addComponent(combocurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(modificaraluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(limparBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(eliminaraluno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(restaurarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane4)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(guardarBt)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(guardarBt)
-                        .addGap(69, 69, 69)
-                        .addComponent(limparBt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(restaurarBt)))
-                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,9 +581,24 @@ public class App extends javax.swing.JFrame {
                     .addComponent(guardarBt)
                     .addComponent(limparBt)
                     .addComponent(restaurarBt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(selaluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modificaraluno)
+                    .addComponent(eliminaraluno))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboaluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combocurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         jTabbedPane1.addTab("Alunos", jPanel3);
@@ -523,15 +672,15 @@ public class App extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -541,15 +690,114 @@ public class App extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void limparBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparBtActionPerformed
+    private void eliminaralunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminaralunoActionPerformed
         // TODO add your handling code here:
-        pais.setText("");
-        // idaluno.setText("");
-        nome.setText("");
-        ano.setText("");
-        altura.setText("");
-        res.setText("");
-    }//GEN-LAST:event_limparBtActionPerformed
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            if (formandos.size() == 0) {
+                res2.append("Não existem formandos." + "\n");
+            } else {
+                int idFormando = (int) selaluno.getValue();
+                if (idFormando <= 0 || idFormando > formandos.size()) {
+                    res2.append("O formando " + idFormando + " não foi encontrado." + "\n");
+                } else {
+                    formandos.get(idFormando - 1);
+                    formandos.remove(idFormando - 1);
+                    res2.append("O formando " + idFormando + " foi eliminado." + "\n");
+                }
+            }
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(formandos);
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_eliminaralunoActionPerformed
+
+    private void modificaralunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificaralunoActionPerformed
+        // TODO add your handling code here:
+        FileInputStream fileInputStream = null;
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            if (formandos.size() == 0) {
+                res2.append("Não existe alunos." + "\n");
+            } else {
+                int idaluno = (int) selaluno.getValue();
+                if (idaluno <= 0 || idaluno > formandos.size()) {
+                    res2.append("Nenhum Aluno selecionado" + "\n");
+                } else {
+                    formandos.get(idaluno - 1);
+                    Person person = new Person();
+                    person.setId(idaluno);
+                    person.setPais(pais.getText());
+                    person.setNome(nome.getText());
+                    //    person.setAltura(Integer.parseInt(altura));
+
+                    //  person.setAltura(altura.getText());
+                    //  person.setAno(ano.getText());
+                    formandos.set(idaluno - 1, person);
+                    res2.append("Aluno com ID:" + idaluno + " foi alterado");
+
+                }
+            }
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(arraydisciplina);
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_modificaralunoActionPerformed
+
+    private void restaurarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurarBtActionPerformed
+        FileInputStream fileInputStream = null;
+        try {
+            // TODO add your handling code here:
+            fileInputStream = new FileInputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            formandos = (ArrayList<Person>) objectInputStream.readObject();
+            objectInputStream.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fileInputStream.close();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        res2.setText("");
+        for (Person formandos : formandos) {
+            res2.append(formandos.toString());
+        }
+
+        /*
+        for (int x = 0; x < formandos.size(); x++) {
+            res.append(String.valueOf("ID " + formandos.get(x).getId() + " Nome:" + nome.getName() + "\n");
+            }
+
+            idaluno.setText(String.valueOf(pessoa.getId()));
+            pais.setText(pessoa.getPais());
+            nome.setText(pessoa.getNome());
+            ano.setText(String.valueOf(pessoa.getAno()));
+            altura.setText(String.valueOf(pessoa.getAltura()));
+
+            res2.setText("" + "\n");
+            for (int x = 0; x < formandos.size(); x++) {
+                res2.append("Id:" + String.valueOf(formandos.get(x).getId() + " Nome:" + pessoa.getNome()) + "\n");
+            }
+
+        }*/
+    }//GEN-LAST:event_restaurarBtActionPerformed
 
     private void guardarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarBtActionPerformed
         try {
@@ -576,93 +824,91 @@ public class App extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_guardarBtActionPerformed
 
-    private void restaurarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurarBtActionPerformed
-        FileInputStream fileInputStream = null;
+    private void limparBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparBtActionPerformed
+        // TODO add your handling code here:
+        pais.setText("");
+        nome.setText("");
+        ano.setText("");
+        altura.setText("");
+        res.setText("");
+    }//GEN-LAST:event_limparBtActionPerformed
+
+    private void eliminardisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminardisciplinaActionPerformed
+        // TODO add your handling code here:
         try {
-            // TODO add your handling code here: 
-            fileInputStream = new FileInputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Person.txt");
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            formandos = (ArrayList<Person>) objectInputStream.readObject();
-            objectInputStream.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fileInputStream.close();
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            if (arraydisciplina.size() == 0) {
+                res1.append("Não existem Disciplinas." + "\n");
+            } else {
+                int iddisciplina = (int) seldisciplina.getValue();
+                if (iddisciplina <= 0 || iddisciplina > arraydisciplina.size()) {
+                    res1.append("O Disciplinas " + iddisciplina + " não foi encontrado." + "\n");
+                } else {
+                    arraydisciplina.get(iddisciplina - 1);
+                    arraydisciplina.remove(iddisciplina - 1);
+                    res1.append("A Disciplina " + iddisciplina + " foi eliminada." + "\n");
+                }
+            }
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(arraydisciplina);
+                objectOutputStream.flush();
             } catch (IOException ex) {
                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
-        res2.setText("");
-        for (Person formandos : formandos) {
-            res2.append(formandos.toString());
-        }
+    }//GEN-LAST:event_eliminardisciplinaActionPerformed
 
-        /*
-        for (int x = 0; x < formandos.size(); x++) {
-            res.append(String.valueOf("ID " + formandos.get(x).getId() + " Nome:" + nome.getName() + "\n");
-        }
-      
-        idaluno.setText(String.valueOf(pessoa.getId()));
-        pais.setText(pessoa.getPais());
-        nome.setText(pessoa.getNome());
-        ano.setText(String.valueOf(pessoa.getAno()));
-        altura.setText(String.valueOf(pessoa.getAltura()));
-
-        res2.setText("" + "\n");
-        for (int x = 0; x < formandos.size(); x++) {
-            res2.append("Id:" + String.valueOf(formandos.get(x).getId() + " Nome:" + pessoa.getNome()) + "\n");
-        }
-
-    }*/
-    }//GEN-LAST:event_restaurarBtActionPerformed
-
-    private void guardarcursoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarcursoBtActionPerformed
+    private void modificardisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificardisciplinaActionPerformed
         // TODO add your handling code here:
+        FileInputStream fileInputStream = null;
         try {
-            Curso curso = new Curso();
-            //curso.setIdcurso(Integer.parseInt(idcurso.getText()));
-            curso.setNomecurso(cursos.getText());
-            curso.setHoras(Integer.parseInt(horascurso.getText()));
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Disciplinaarray.txt");
+            if (arraydisciplina.size() == 0) {
+                res1.append("Não existem Disciplina." + "\n");
+            } else {
+                int iddisciplina = (int) seldisciplina.getValue();
+                if (iddisciplina <= 0 || iddisciplina > arraydisciplina.size()) {
+                    res1.append("Nenhuma Disciplina selecionada" + "\n");
+                } else {
 
-            //dar id;
-            curso.setIdcurso(idarraycurso++);
-            idcurso.setText(String.valueOf(idarraycurso));
-            arraycurso.add(curso);
-            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+                    arraydisciplina.get(iddisciplina - 1);
+                    Disciplina disciplina = new Disciplina();
+                    disciplina.setHorasdisciplina(Integer.parseInt(horasdisciplina.getText()));
+                    disciplina.setNomedisciplina(nomedisciplina.getText());
+                    arraydisciplina.set(iddisciplina - 1, disciplina);
+                    res1.append("Disciplina com o ID:" + iddisciplina + " foi alterado ");
 
+                }
+            }
             try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-                objectOutputStream.writeObject(arraycurso);
+                objectOutputStream.writeObject(arraydisciplina);
                 objectOutputStream.flush();
             } catch (IOException ex) {
-                Logger.getLogger(App.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(App.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_guardarcursoBtActionPerformed
+    }//GEN-LAST:event_modificardisciplinaActionPerformed
 
-    private void limparcursoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparcursoBtActionPerformed
+    private void CursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CursosActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_CursosActionPerformed
 
-        horascurso.setText("");
-        cursos.setText("");
-
-
-    }//GEN-LAST:event_limparcursoBtActionPerformed
+    private void limparDisciplinaBt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparDisciplinaBt1ActionPerformed
+        // TODO add your handling code here:
+        nomedisciplina.setText("");
+        horasdisciplina.setText("");
+    }//GEN-LAST:event_limparDisciplinaBt1ActionPerformed
 
     private void guardardisciplinaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardardisciplinaBtActionPerformed
         // TODO add your handling code here:
         try {
             Disciplina disciplina = new Disciplina();
             //curso.setIdcurso(Integer.parseInt(idcurso.getText()));
-            disciplina.setNomedisciplina(disciplinas.getText());
+            disciplina.setNomedisciplina(nomedisciplina.getText());
             disciplina.setHorasdisciplina(Integer.parseInt(horasdisciplina.getText()));
 
             //dar id;
@@ -682,7 +928,6 @@ public class App extends javax.swing.JFrame {
             Logger.getLogger(App.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_guardardisciplinaBtActionPerformed
 
     private void restaurarDisciplinaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurarDisciplinaBtActionPerformed
@@ -711,20 +956,73 @@ public class App extends javax.swing.JFrame {
         for (Disciplina arraydisciplina : arraydisciplina) {
             res1.append(arraydisciplina.toString());
         }
-
-
     }//GEN-LAST:event_restaurarDisciplinaBtActionPerformed
 
-    private void limparDisciplinaBt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparDisciplinaBt1ActionPerformed
+    private void eliminarcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarcursoActionPerformed
         // TODO add your handling code here:
-        disciplinas.setText("");
-        horasdisciplina.setText("");
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            if (arraycurso.size() == 0) {
+                res1.append("Não existem Cursos." + "\n");
+            } else {
+                int idcurso = (int) selcurso.getValue();
+                if (idcurso <= 0 || idcurso > arraycurso.size()) {
+                    res.append("O curso " + idcurso + " não foi encontrado." + "\n");
+                } else {
+                    arraycurso.get(idcurso - 1);
+                    arraycurso.remove(idcurso - 1);
+                    res.append("O Curso " + idcurso + " foi eliminado." + "\n");
+                }
+            }
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(arraycurso);
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_eliminarcursoActionPerformed
 
-    }//GEN-LAST:event_limparDisciplinaBt1ActionPerformed
+    private void modificarcursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarcursoActionPerformed
+        FileInputStream fileInputStream = null;
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+            if (arraycurso.size() == 0) {
+                res.append("Não existem Cursos criados." + "\n");
+            } else {
+                int idCurso = (int) selcurso.getValue();
+                if (idCurso <= 0 || idCurso > arraycurso.size()) {
+                    res.append("Nenhum Curso selecionado" + "\n");
+                } else {
 
-    private void CursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CursosActionPerformed
+                    arraycurso.get(idCurso);
+                    Curso curso = new Curso();
+                    curso.setHoras(Integer.parseInt(horascurso.getText()));
+                    curso.setNomecurso(nomecurso.getText());
+                    arraycurso.set(idCurso, curso);
+                    res.append("O curso com o ID:" + idCurso + " foi alterado ");
+
+                }
+            }
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(arraycurso);
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_modificarcursoActionPerformed
+
+    private void limparcursoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparcursoBtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CursosActionPerformed
+
+        horascurso.setText("");
+        nomecurso.setText("");
+    }//GEN-LAST:event_limparcursoBtActionPerformed
 
     private void restaurarcursoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaurarcursoBtActionPerformed
         // TODO add your handling code here:
@@ -754,15 +1052,35 @@ public class App extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_restaurarcursoBtActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void guardarcursoBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarcursoBtActionPerformed
+        // TODO add your handling code here:
+        try {
+            Curso curso = new Curso();
+            //curso.setIdcurso(Integer.parseInt(idcurso.getText()));
+            curso.setNomecurso(nomecurso.getText());
+            curso.setHoras(Integer.parseInt(horascurso.getText()));
+
+            //dar id;
+            curso.setIdcurso(idarraycurso++);
+            idcurso.setText(String.valueOf(idarraycurso));
+            arraycurso.add(curso);
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Shiboni\\AppData\\Local\\Temp\\Cursoarray.txt");
+
+            try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(arraycurso);
+                objectOutputStream.flush();
+            } catch (IOException ex) {
+                Logger.getLogger(App.class
+                        .getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(App.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_guardarcursoBtActionPerformed
+
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -799,13 +1117,16 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JTextField altura;
     private javax.swing.JTextField ano;
+    private javax.swing.JComboBox<String> comboaluno;
+    private javax.swing.JComboBox<String> combocurso;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JTextField cursos;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JTextField disciplinas;
     private javax.swing.JMenu editMenu;
+    private javax.swing.JButton eliminaraluno;
+    private javax.swing.JButton eliminarcurso;
+    private javax.swing.JButton eliminardisciplina;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JButton guardarBt;
@@ -818,11 +1139,17 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JTextField idcurso;
     private javax.swing.JTextField iddisciplina;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -835,14 +1162,19 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton limparBt;
     private javax.swing.JButton limparDisciplinaBt1;
     private javax.swing.JButton limparcursoBt;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JButton modificaraluno;
+    private javax.swing.JButton modificarcurso;
+    private javax.swing.JButton modificardisciplina;
     private javax.swing.JTextField nome;
+    private javax.swing.JTextField nomecurso;
+    private javax.swing.JTextField nomedisciplina;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JTextField pais;
     private javax.swing.JMenuItem pasteMenuItem;
@@ -854,6 +1186,9 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton restaurarcursoBt;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JSpinner selaluno;
+    private javax.swing.JSpinner selcurso;
+    private javax.swing.JSpinner seldisciplina;
     // End of variables declaration//GEN-END:variables
 
 }
